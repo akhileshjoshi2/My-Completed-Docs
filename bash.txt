@@ -1,0 +1,133 @@
+[root@vzadmin scripts]# cat update_cvrstreamingserver_prod.sh
+#!/bin/sh
+
+RESOURCE_PATH="hmsweb/static/refresh/CVRStreamingServer"
+SOURCE_FILE=/scripts/webservers_prod.txt
+
+servers=`cat $SOURCE_FILE`
+for s in $servers;
+do
+        if [ ! -z $s ]; then
+                # We are accessing each server here directly on port 8080
+                curl -s -o /scripts/work_area/${s}_cvrwowza_count_$$.out -m 10 -H "ApiKey: ArloRefreshKey" http://$s:8080/$RESOURCE_PATH &
+        fi
+done
+
+sleep 15
+
+for s in $servers;
+do
+echo $s
+cat /scripts/work_area/${s}_cvrwowza_count_$$.out
+/bin/mv /scripts/work_area/${s}_cvrwowza_count_$$.out  /scripts/work_area/${s}_cvrwowza_count_last.out
+echo ""
+echo ""
+done
+
+
+#########################################################################################################################################################
+
+[root@postmill dynamodb]# cat DEV_load_DynamoDB.sh
+#!/bin/bash
+#
+# Usage: Dev_load_DynamoDB.sh Tablename JSON_datafile
+#
+export NODE_PATH=/usr/lib/node_modules
+
+Dev_key=AKIAI2LSKCGCJ7YKZ5FA
+Dev_secret="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"
+region="eu-west-1"
+Tablename=$1
+JSON_datafile=$2
+
+sed -i -e '$a\' $JSON_datafile
+
+echo ""
+echo "Restoring to EU Dev"
+echo "Table is $Tablename"
+echo "Region is $region"
+echo ""
+node /opt/dynamo-archive/bin/dynamo-restore.js --key "$Dev_key" --secret "$Dev_secret" --table "$Tablename" --region "$region"  < $JSON_datafile
+#############################################################################################################################################################
+
+[root@vzadmin users_keys]# cat username_calc.sh
+#!/bin/bash
+firstinitial=`echo $1 | cut -c1 | tr [A-Z] [a-z]`
+lastname=`echo $1 | cut -d ' ' -f2 | tr [A-Z] [a-z]`
+username="${firstinitial}${lastname}"
+# echo $username
+lastid=`tail -1 /etc/passwd | cut -d ':' -f3`
+nextid=$((lastid + 1))
+# echo $nextid
+grep $nextid /etc/passwd
+if [[ $? -eq 0 ]]
+then
+        echo "UserID $nextid is already in use"
+        exit 1
+fi
+grep "${username}:" /etc/passwd
+if [[ $? -eq 0 ]]
+then
+        echo "Username $username is already in use"
+        exit 1
+fi
+
+# "Safe to create"
+echo $username,$nextid,$1
+
+exit 0
+
+####################################################################################################################################################
+
+[root@vzadmin users_keys]# cat create_user_key.pl acs.txt
+#!/bin/env perl
+if ( ! @ARGV )
+{
+  print "Usage: \$1 file with users to add\n";
+  exit 1;
+}
+
+open (FILE, $ARGV[0]);
+while (<FILE>) {
+   chomp;
+   ($username,$uid,$fname) = split(",");
+   #print 'useradd -u '.$uid.' -m '.'-c "'.$fname.'" '.$username."\n";
+   print "Adding user account for $fname\n";
+   `useradd -u $uid -m -c "$fname" $username`;
+
+if ( -e "/home/ec2-user/users_keys/$username.pem" )
+{
+  print "File /home/ec2-user/users_keys/${username}.pem exists already\n";
+
+}
+else
+{
+
+   `cd ~${username} && sudo -u $username /usr/bin/ssh-keygen -f ${username}.pem -P Protect.Me && mv ${username}.pem* /home/ec2-user/users_keys && cd -`;
+   `chown ec2-user *.pem`;
+}
+}
+acs,1208,Aravind CS
+##########################################################################################################################################
+
+[root@vzadmin users_keys]# cat create_users.sh
+#!/bin/bash
+if [ $# -lt 3 ]
+then
+  echo "Usage: \$1 file with users to add \$2 servers to add those users to, \$3 ssh key to use"
+else
+  users_to_create=$1
+  key=$3
+  shell=$4
+  for server in `grep -v "^#" $2 | awk '/^[^#][1-9]*/ {print $1}'`; do
+    echo "Server = $server"
+    for item in `cut -d "," -f 1 $users_to_create`; do
+       echo "./push.sh $item $server $key $shell"
+       ./push.sh $item $server $key $shell
+    done
+  done
+fi
+###########################################################################################
+
+
+

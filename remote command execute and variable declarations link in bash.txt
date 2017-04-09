@@ -1,0 +1,11 @@
+
+--definning variables
+
+http://www.tldp.org/LDP/abs/html/declareref.html-
+http://tldp.org/LDP/abs/html/untyped.html
+
+
+Remote command executions
+http://superuser.com/questions/808230/shell-script-ssh-to-remote-machine-then-exit-exit-does-not-work
+http://www.shellhacks.com/en/Running-Commands-on-a-Remote-Linux-Server-over-SSH
+http://www.cyberciti.biz/faq/linux-unix-osx-bsd-ssh-run-command-on-remote-machine-server/

@@ -1,0 +1,444 @@
+    1  bash script.sh 
+    2  ls
+    3  cd home
+    4  cd /home
+    5  ls
+    6  cd
+    7  pwd
+    8  cd /home
+    9  cd /user
+   10  cd user
+   11  ls
+   12  yum install git
+   13  ls -al
+   14  ls
+   15  git init
+   16  git add chef badge.docx
+   17  mv chef badge.docx chefbadge
+   18  ls -al chef\ badge.docx 
+   19  cd chef\ badge.docx 
+   20  cd chef
+   21  mv chef\ badge.docx chefbadge
+   22  ls
+   23  git add chefbadge 
+   24  git commit -m "first commit"
+   25  git remote add origin https://github.com/akhileshjoshi2/My-Completed-Docs.git
+   26  git push -u origin master
+   27  git --version
+   28  ls -al
+   29  cat .config
+   30  cd .config/
+   31  ls
+   32  cd ..
+   33  ls -al
+   34  git config --gloabal user.name "akhileshjoshi2"
+   35  git config --global user.name "akhileshjoshi2"
+   36  git config --global user.email "akhileshjoshi2@gmail.com"
+   37  ls -al
+   38  find / -name .gitconfig
+   39  pwd
+   40  cd
+   41  ls
+   42  pwd
+   43  ls -al
+   44  cat .gitconfig 
+   45  git config --list
+   46  cat .gitconfig 
+   47  cd /home/user/
+   48  ls -al
+   49  cd .git/
+   50  ls
+   51  cat config 
+   52  cd ..
+   53  cd /etc
+   54  ls -al
+   55  cd
+   56  git config --global user.name "akhileshjoshi2"
+   57  git config --list
+   58  git config --system system.name "GIT Repo Server1"
+   59  ls -al /etc/gitconfig 
+   60  cat /etc/gitconfig
+   61  git config --global system.name "My GIT Repo Server"
+   62  git config --list
+   63  vim .gitconfig 
+   64  git config --list
+   65  git config --global core.editor vim
+   66  git config --list
+   67  vim .gitconfig 
+   68  git config --global core.pager 'more'
+   69  git config --list
+   70  find / -name .gitignore_global
+   71  vim .gitignore_global
+   72  git config --global core.excludesfile ~/.gitignore_global 
+   73  git config --list
+   74  cat .gitignore_global 
+   75  cat .gitconfig 
+   76  cd /home/user
+   77  mkdir gittest
+   78  cd gittest/
+   79  ll
+   80  git init
+   81  ls -al
+   82  cd .git
+   83  ll
+   84  cd objects/
+   85  ls -al
+   86  cd ..
+   87  ls -al
+   88  cd ..
+   89  rm -rf .git/
+   90  ls -al
+   91  git status
+   92  git init
+   93  git status
+   94  echo "this is my first file">>test.txt
+   95  ls
+   96  git status
+   97  git add test.txt 
+   98  git status
+   99  git commit test.txt 
+  100  git status
+  101  cd ..
+  102  mkdir mydir
+  103  cd mydir/
+  104  cp /etc/h* .
+  105  ls -al
+  106  git status
+  107  ls -al
+  108  git status
+  109  git init
+  110  git statis
+  111  git status
+  112  git add *
+  113  git status
+  114  git commit -ma " this is new files for the new repository"
+  115  git commit -m " this is new files for the new repository"
+  116  git status
+  117  ls -al
+  118  rm -rf hosts.deny 
+  119  git status
+  120  git commit
+  121  git status
+  122  ls -al
+  123  history
+  124  vim hosts.deny
+  125  git status
+  126  rm -rf hosts.deny
+  127  git rm hosts.deny
+  128  git status
+  129  git commit
+  130  git status
+  131  history
+  132  history > /root/allcommand.txt 
+  133  cat /root/allcommand.txt
+  134  cd ..
+  135  ls
+  136  mkdir gitignore
+  137  cd gitignore/
+  138  cp /home/user/mydir/* .
+  139  ls
+  140  git init
+  141  git status
+  142  vm /etc/sudoers
+  143  vim /etc/group
+  144  vim /etc/host
+  145  vim /etc/hosts
+  146  cd /etc/
+  147  ls
+  148  vim /etc/group
+  149  getenforce
+  150  cd /etc/selinux/
+  151  ls
+  152  vim config 
+  153  vim /etc/grub.conf 
+  154  yum install chef
+  155  ls
+  156  cd
+  157  vim /etc/sudoers
+  158  exit
+  159  cd /home/user/
+  160  ls
+  161  cd gitignore/
+  162  ls
+  163  vim .gitignore
+  164  ls
+  165  vim .gitignore
+  166  git status
+  167  vim .gitignore 
+  168  git statis
+  169  ;s -al
+  170  ls -al
+  171  git status
+  172  git add *
+  173  git stauts
+  174  git status
+  175  git add hostname
+  176  git add hosts hosts.allow 
+  177  git status
+  178  vim .gitignore 
+  179  git status
+  180  cd ..
+  181  cp -rf gitignore/ repo2
+  182  ls -al
+  183  cd repo2/
+  184  ls -al
+  185  git status
+  186  git commit -m fitst commit
+  187  git commit -m "fitst commit"
+  188  git status
+  189  cd ..
+  190  rm -rf repo2/
+  191  mkdir repots
+  192  cd repots/
+  193  git clone /home/user/gitignore/ testignore
+  194  ls
+  195  cd testignore/
+  196  ll
+  197  cd ..
+  198  rm -rf testignore/
+  199  git clone /home/user/gitignore/* testignore
+  200  git clone /home/user/gitignore testignore
+  201  ls
+  202  cd testignore/
+  203  ls -al
+  204  cd ..
+  205  rm -rf testignore/
+  206  cd /home/user/
+  207  cd gitignore/
+  208  ls
+  209  cd ..
+  210  cd repots/
+  211  git clone /home/user/gitignore/* testignore
+  212  ls
+  213  git clone /home/user/gitignore/ testignore
+  214  cd testignore/
+  215  ll
+  216  cd ..
+  217  cd /home /user
+  218  cd user
+  219  cd repots/
+  220  rm rf testignore/
+  221  rm -rf testignore
+  222  cd ..
+  223  cd gitignore/
+  224  ls
+  225  ls -al
+  226  git clone /home/user/gitignore/ /home/user/repots/testignore
+  227  cd /home/user/repots/testignore
+  228  ls
+  229  ls -al
+  230  cd ..
+  231  chmod a+x /home/user/gitignore/
+  232  ls -al  /home/user/gitignore/
+  233   git clone /home/user/gitignore/ /home/user/repots/testignore
+  234  rm -rf testignore/
+  235   git clone /home/user/gitignore/ /home/user/repots/testignore
+  236  rm -rf testignore/
+  237  cd /home/user/gitignore/
+  238  cd ..
+  239  chown user:user gitignore/
+  240  git clone /home/user/gitignore/ /home/user/repots/testignore
+  241  rm -rf /home/user/repots/testignore
+  242  git clone /home/user/gitignore /root/repots/testignore
+  243  rm -rf /root/repots/testignore
+  244  exit
+  245  git commit -m "add all file"
+  246  cd /home/user/gitignore/
+  247  git commit -m "add all file"
+  248  git status
+  249  cd ..
+  250  cd repots/
+  251  git clone /home/user/gitignore/ testignore
+  252  rm -rf testignore/
+  253  git clone /home/user/gitignore/ testignore
+  254  ls
+  255  cd testignore/
+  256  ls
+  257  echo "this is a test file" >> test.txt
+  258  git status
+  259  git add test.txt 
+  260  git commit -m "new file added test.txt in the repo gitignore"
+  261  git status
+  262  git push
+  263  git push /home/user/gitignore/
+  264  git push /home/user/gitignore
+  265  git push gitignore
+  266  git status
+  267  ls -al /home/user/gitignore/
+  268  cd /home/user/gitignore/
+  269  git pull ../repots/testignore/
+  270  git status
+  271  cd /home/user/
+  272  ls
+  273  cd repots/
+  274  cd testignore/
+  275  git status
+  276  git push
+  277  git status
+  278  ipconfig
+  279  ifocnfig
+  280  ifconfig
+  281  ssh-keygen
+  282  ssh copy-id user@172.31.26.240
+  283  ssh-copy-id user@172.31.26.240
+  284  ssh 172.31.26.240
+  285  ssh 'user@172.31.26.240'
+  286  git clone user@172.31.26.240:/home/user/gitignore localrepo
+  287  cd localrepo/
+  288  ls -al
+  289  cd ..
+  290  rm -r localrepo/
+  291  rm -rf localrepo/
+  292  cd ..
+  293  git clone user@172.31.26.240:/home/user/gitignore localrepo
+  294  ls
+  295  cd localrepo/
+  296  ls
+  297  cd ..
+  298  su user
+  299  cd /home/user
+  300  ls
+  301  git tag
+  302  git tag tag1
+  303  eco "tag1 post" > posttag.txt
+  304  echo "tag1 post" > posttag.txt
+  305  git status
+  306  cd gitignore/
+  307  git tag tag1
+  308  echo "tag1 post" >posttag.txt
+  309  git status
+  310  git commit -m "post tag1 commit"
+  311  git status
+  312  git add posttag.txt 
+  313  git commit -m "post tag1 commit"
+  314  git status
+  315  git show tag1
+  316  git tag tag1
+  317  git describe --tags
+  318  git tag -a v1 -m "version 1.0 Release"
+  319  git tag
+  320  git show v1
+  321  git describe
+  322  git describe --tags
+  323  echo "tag2" > posttag2.txt
+  324  git add posttag2.txt 
+  325  git commit posttag2.txt -m "tag2 commit"
+  326  git status
+  327  git tag
+  328  git show v1
+  329  git describe --tags
+  330  git show v1
+  331  git status
+  332  git describe --tags
+  333  qit branch -a
+  334  git branch -a
+  335  git checkout -b development
+  336  git status
+  337  git -a branch
+  338  git branch -a
+  339  git checkout -b development
+  340  git checkout master
+  341  git branch -a
+  342  git status
+  343  echo " This is master only" > MASTERBRANCH.TXT
+  344  git add MASTERBRANCH.TXT 
+  345  git commit MASTERBRANCH.TXT 
+  346  git status
+  347  git checkout development
+  348  git status
+  349  ll
+  350  git checkout development
+  351  ll
+  352  git checkout master
+  353  ll
+  354  git checkout development
+  355  echo " Development Branch" > DEVELOPMENT.TXT
+  356  git add DEVELOPMENT.TXT 
+  357  git commit DEVELOPMENT.TXT 
+  358  git status
+  359  git checkout master
+  360  ll
+  361  git branch -a
+  362  git tag
+  363  git tag v1
+  364  git tag show v1
+  365  git show v1
+  366  git tag
+  367  git describe --tags
+  368  git status
+  369  git merge development --no-ff
+  370  git status
+  371  git branch -a
+  372  git status
+  373  ll
+  374  git log
+  375  git log | more
+  376  git log -p -2
+  377  git log --stat
+  378  git log --pretty=oneline
+  379  git log --pretty=format:"%h, %an, %ae, %cn, %cd,  
+  380  git log --pretty=format:"%h, %an, %ae, %cn, %cd, -%s"
+  381  git log --pretty=format:"%h, %an, %ae, %cn, %cd, -%s" --graph
+  382  mkdir repos
+  383  cd repos/
+  384  cd ..
+  385  mkdir test
+  386  mv test repos
+  387  cd repos/
+  388  ssh keygen
+  389  ssh-keygen
+  390  cd ..
+  391  rm -rf repos
+  392  cd
+  393  mkdir repos
+  394  cd repos
+  395  ssh-keygen
+  396  ls -al ../.ssh/
+  397  cat ../.ssh/id_rsa.pub 
+  398  git clone https://github.com/akhileshjoshi2/testapril.git
+  399  git clone git@github.com/akhileshjoshi2/testapril.git
+  400  git clone git@github.com:akhileshjoshi2/testapril.git
+  401  ls
+  402  rm -rf testapril/
+  403  git clone git@github.com/akhileshjoshi2/testapril.git
+  404  git clone git@github.com:akhileshjoshi2/testapril.git
+  405  ll
+  406  git config --global user.name "GIT Test"
+  407  ls -al
+  408  git clone git@github.com:akhileshjoshi2/testapril.git
+  409  ls
+  410  cd testapril/
+  411  ls
+  412  vim README.md 
+  413  vimm README.md 
+  414  vim README.md 
+  415  git config --global user.name "akhileshjoshi2"
+  416  git config --global user.email "akhileshjoshi2@gmail.com"
+  417  ls -al
+  418  find / -name .gitconfig
+  419  vim /root/.gitconfig
+  420  git config --global user.name "akhileshjoshi23"
+  421   find / -name .gitconfig
+  422  vim /root/.gitconfig
+  423  git config --global user.name "akhileshjoshi2"
+  424  echo "this is first test file" > Filefirst.txt
+  425  git status
+  426  git add Filefirst.txt 
+  427  git commit Filefirst.txt -m "first file added"
+  428  git status
+  429  git add README.md 
+  430  git commit README.md -m "second add"
+  431  git status
+  432  git push origin master
+  433  git status
+  434  git checkout -b dev
+  435  git status
+  436  git status -a
+  437  git checkout -a
+  438  git status
+  439  echo "development branch test" >dev.txt
+  440  git add dev.txt 
+  441  git commit dev.txt -m " dev file added"
+  442  git status
+  443  git push origin dev
+  444  history >> /root/GITcommands4-9-2017.txt
